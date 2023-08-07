@@ -1,6 +1,6 @@
 {
   "name": "stencil-module-test",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -15,10 +15,14 @@
     "url": "https://github.com/ionic-team/stencil-component-starter.git"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "loader/",
+    "utils/",
+    "styles/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build --docs && rollup -c",
+    "build-utils": "rollup -c",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -32,7 +36,11 @@
     "@types/node": "^16.18.11",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
-    "puppeteer": "^20.7.3"
+    "puppeteer": "^20.7.3",
+    "rollup": "3.27.2",
+    "rollup-plugin-cleandir": "2.0.0",
+    "rollup-plugin-copy": "3.4.0",
+    "rollup-plugin-ts": "3.4.3"
   },
   "license": "MIT"
 }

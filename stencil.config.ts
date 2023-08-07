@@ -2,9 +2,11 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'stencil-module-test',
+  globalStyle: './src/styles.css',
   outputTargets: [
     {
       type: 'dist',
+      esmLoaderPath: '../loader',
     },
     {
       type: 'dist-custom-elements',
